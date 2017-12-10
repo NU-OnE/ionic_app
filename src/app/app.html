@@ -1,1 +1,21 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mycontent">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title text-center>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="openMenu(tabsPage)" menuToggle>
+                <ion-icon icon-left name="quote"></ion-icon>
+                Quotes
+            </button>
+            <button (click)="openMenu(settingsPage)" menuToggle ion-item>
+                <ion-icon icon-left name="settings"></ion-icon>
+                Settings
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="tabsPage"></ion-nav>

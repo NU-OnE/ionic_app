@@ -8,7 +8,11 @@ export class MyquotesProvider {
 
   }
 
-    private favoriteQuotes = [];
+    private favoriteQuotes = [{
+        id: '4',
+        person: 'John Wooden',
+        text: 'Ability may get you to the top, but it takes character to keep you there.'
+    }];
 
     addQuoteToFavorite(selectedQuote){
         this.favoriteQuotes.push(selectedQuote);
@@ -31,6 +35,7 @@ export class MyquotesProvider {
     isThisQuoteAlreadyFavorie(quote){
 
         this.favoriteQuotes.find((crntElement)=>{
+            //console.log(crntElement.id == quote.id);
             return crntElement.id == quote.id;
         })
     }

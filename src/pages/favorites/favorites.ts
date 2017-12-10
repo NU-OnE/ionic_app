@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {MyquotesProvider} from "../../providers/myquotes/myquotes";
 import {QuotePage} from "../quote/quote";
+import {SettingsProvider} from "../../providers/settings/settings";
 
 /**
  * Generated class for the FavoritesPage page.
@@ -20,13 +21,14 @@ export class FavoritesPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private myQuotesService: MyquotesProvider,
-                private modalCtrl: ModalController) {
+                private modalCtrl: ModalController,
+                private setingsService: SettingsProvider) {
     }
 
     myQuotes = [];
 
     ionViewWillEnter() {
-        console.log("ionViewWillEnter");
+        //console.log("ionViewWillEnter");
        this.myQuotes = this.myQuotesService.getFacoriteQuotes();
     }
 
@@ -46,5 +48,9 @@ export class FavoritesPage {
         this.myQuotesService.removeQuotes(quote);
         /** reloading changes */
         this.myQuotes = this.myQuotesService.getFacoriteQuotes();
+    }
+
+    isAltCheked(){
+        return this.setingsService.getColor() ? 'favoriteBg':'altFavoriteBg';
     }
 }

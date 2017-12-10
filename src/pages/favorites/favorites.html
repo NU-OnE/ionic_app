@@ -2,7 +2,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>My Favorites Quotes</ion-title>
+      <ion-buttons>
+          <button ion-button icon-only menuToggle>
+              <ion-icon name="menu"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title text-center="">My Favorites Quotes</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -12,7 +17,7 @@
 
  <ion-list>
      <ion-item-sliding *ngFor="let q of myQuotes">
-         <ion-item text-center (click)="onViewQuote(q)">
+         <ion-item [color]="isAltCheked()"  text-center (click)="onViewQuote(q)">
              <h2> {{q.person}} </h2>
              <p> {{q.text}} </p>
          </ion-item>

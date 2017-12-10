@@ -12,6 +12,7 @@ import {QuotePage} from "../pages/quote/quote";
 import {QuotesPage} from "../pages/quotes/quotes";
 import {SettingsPage} from "../pages/settings/settings";
 import { MyquotesProvider } from '../providers/myquotes/myquotes';
+import { SettingsProvider } from '../providers/settings/settings';
 
 
 
@@ -43,7 +44,8 @@ import { MyquotesProvider } from '../providers/myquotes/myquotes';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MyquotesProvider
+    MyquotesProvider,
+    SettingsProvider
   ]
 })
 export class AppModule {}

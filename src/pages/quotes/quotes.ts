@@ -49,9 +49,11 @@ export class QuotesPage implements OnInit{
 
 
 
-    isFavorite(quote: object){
 
-        return this.myQuotes.isThisQuoteAlreadyFavorie(quote);
+    isFavorite(quote){
+
+        console.log(this.myQuotes.isThisQuoteAlreadyFavorie(quote));
+        //return this.myQuotes.isThisQuoteAlreadyFavorie(quote);
     }
 
 }
